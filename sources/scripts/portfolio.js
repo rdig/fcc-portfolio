@@ -9,12 +9,15 @@ const links = {
 const rotator = $('#verb');
 
 let altLinkScroll = function(element, index = element.dataset.index) {
+	let currentView = $('.active').attr('data-index');
 	if (body.hasClass('disabled-onepage-scroll')) {
 		$('html, body').animate({
 			scrollTop: $('section[data-index=' + index + ']').position().top
 		});
 	} else {
-		main.moveTo(index);
+		if (currentView !== index) {
+			main.moveTo(index);
+		}
 	}
 }
 
