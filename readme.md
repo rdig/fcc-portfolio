@@ -66,5 +66,5 @@ This project is licensed under the Mozilla Public License Version 2.0. You can [
 This project uses additional libraries, each with it's own license:
 
 - `jquery` - [Copyright jQuery Foundation and other contributors](https://github.com/jquery/jquery/blob/master/LICENSE.txt)
-- `onepage-scroll` by [Pete R](https://github.com/peachananr) - (Attribution-ShareAlike 4.0 International)[http://creativecommons.org/licenses/by-sa/4.0/deed.en_US]
+- `onepage-scroll` by [Pete R](https://github.com/peachananr) - [Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/deed.en_US)
 - `simple-text-rotator` by [Pete R](https://github.com/peachananr) - License ???
