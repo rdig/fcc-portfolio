@@ -5,8 +5,7 @@
 		"es6": true
 	},
 	"globals": {
-		"$": true,
-		"__DEV__": true
+		"$": true
 	},
 	"extends": [
 		"eslint:recommended"

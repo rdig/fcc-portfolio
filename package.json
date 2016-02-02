@@ -4,7 +4,8 @@
   "description": "Personal Portfolio, a FreeCodeCamp challange",
   "main": "index.html",
   "scripts": {
-    "dev": "gulp --gulpfile gulp-development.config.js"
+    "dev": "gulp --gulpfile gulp-development.config.js",
+    "build": "NODE_ENV=prod gulp --gulpfile gulp-production.config.js"
   },
   "author": "Raul Glogovetan",
   "license": "MPL-2.0",
@@ -22,6 +23,7 @@
     "gulp-connect": "^2.3.1",
     "gulp-eslint": "^1.1.1",
     "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.1",
     "vinyl-source-stream": "^1.1.0"
   }
 }
