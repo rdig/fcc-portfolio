@@ -52,3 +52,7 @@ This is a one time build (unlike the `dev` build), and will exit once it's done 
 ## Cleanup
 
 **Do NOT** store files in `./scripts`, `./media`, `./styles` as these will be deleted / recreated when running any build (`dev` or `prod`), all files **must go** in the subfolders of `./sources`.
+
+## Known bugs
+
+Due to using the `onepage-scroll` plugin (which makes every parent element the same hight as the screen), on a subsection of mobile devices, there are some display / cropping issues.
