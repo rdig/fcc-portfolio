@@ -1,10 +1,390 @@
 @import "normalize";
+@import "_onepage-scroll";
+@import "_simpletextrotator";
+
+@import url(https://fonts.googleapis.com/css?family=Lora:700|Lato:400,700);
+
+$default-text-color: #d9d9d9;
+$homepage-fallback-background-color: #343945;
+$portfolio-fallback-background-color: #424959;
+$contact-fallback-background-color: #485062;
+$nav-border-color: #5d616a;
+$nav-links-color: #f2f2f2;
+$footer-link-color: #27ae60;
+$verb-text-color: #369fe5;
+$contact-button-background: #27ae60;
+$contact-button-presed: #229954;
+
+$homepage-background: '../media/images/rg-fcc-portfolio-homepage-background_v1.svg';
+$homepage-background-alt: '../media/images/rg-fcc-portfolio-homepage-background_v1.png';
+$contact-background: '../media/images/rg-fcc-portfolio-contact-background_v1.svg';
+$contact-background-alt: '../media/images/rg-fcc-portfolio-contact-background_v1.png';
+$portfolio-react: '../media/images/rg-fcc-portfolio-portfolio-react_v1.svg';
+$portfolio-react-alt: '../media/images/rg-fcc-portfolio-portfolio-react_v1.png';
+$portfolio-smartdreamers: '../media/images/rg-fcc-portfolio-portfolio-smartdreamers_v1.svg';
+$portfolio-smartdreamers-alt: '../media/images/rg-fcc-portfolio-portfolio-smartdreamers_v1.png';
+$portfolio-smuff: '../media/images/rg-fcc-portfolio-portfolio-smuff_v1.svg';
+$portfolio-smuff-alt: '../media/images/rg-fcc-portfolio-portfolio-smuff_v1.png';
+$sprite-map: '../media/sprites/rg-fcc-portfolio-sprites_v1.svg';
+$sprite-map-alt: '../media/sprites/rg-fcc-portfolio-sprites_v1.png';
+
+
+
+$brand-icon: -30px -30px;
+$github-icon: -92px -38px;
+
+@mixin debug {
+	border:1px dashed tomato;
+}
+@mixin sprite_defaults {
+	background: url($sprite-map-alt);
+	background-image: url($sprite-map), none;
+	background-repeat: no-repeat;
+}
+@mixin works_box_shadow {
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+}
+@mixin works_box_shadow_hover {
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:         4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+}
 
 * {
 	box-sizing: border-box;
 }
 html {}
 body {
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
+	color: $default-text-color;
+}
+
+h1, h2, h3 {
+	font-family: 'Lora', serif;
+	margin: 40px 0 0 0;
+	line-height: 40px;
+	font-size: 40px;
+	@media (min-width: 800px) {
+		line-height: 48px;
+		font-size: 48px;
+	}
+}
+
+h2 {
+	font-size: 36px;
+	line-height: 36px;
+	@media (min-width: 800px) {
+		line-height: 40px;
+		font-size: 40px;
+	}
+}
+
+h3 {
+	font-size: 28px;
+	line-height: 28px;
+	@media (min-width: 800px) {
+		line-height: 32px;
+		font-size: 32px;
+	}
+}
+
+p {
+
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		opacity: 0.7;
+	}
+	&:active {
+		opacity: 1;
+	}
+}
+
+nav, footer {
+	background-color: $homepage-fallback-background-color;
+	position: fixed;
+	z-index: 9999;
+	top:0;
+	left:0;
+	padding: 0px 10px 0px 10px;
+	display: block;
+	width: 100%;
+	@media (min-width: 800px) {
+		background-color: transparent;
+	}
+	@media (min-width: 1000px) {
+		width: 1000px;
+		left: 50%;
+		margin-left: -500px;
+	}
+}
+
+nav {
+	.wrapper {
+		font-size: 13px;
+		width: 100%;
+		border-bottom: 1px solid $nav-border-color;
+		padding: 20px 10px 20px 10px;
+		@media (min-width: 800px) {
+			padding: 30px 10px 30px 10px;
+		}
+	}
+	.brand {
+		cursor: pointer;
+		display: inline-block;
+		color: $nav-links-color;
+		.icon {
+			@include sprite_defaults;
+			width: 32px;
+			height: 32px;
+			vertical-align: top;
+			background-position: $brand-icon;
+			display: inline-block;
+		}
+		.name {
+			display: none;
+			@media (min-width: 500px) {
+				display: inline-block;
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 30px;
+				margin: 0 0 0 5px;
+			}
+		}
+	}
+	.menu {
+		list-style-type: none;
+		display: inline-block;
+		float: right;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		li {
+			display: inline-block;
+		}
+		a {
+			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: bold;
+			line-height: 32px;
+			padding: 0 3px 0 3px;
+			margin: 0 3px 0 3px;
+			color: $nav-links-color;
+		}
+	}
+}
+
+footer {
+	top: auto;
+	bottom: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 12px;
+	a {
+		color: $footer-link-color;
+	}
+	.brand {
+		color: $default-text-color;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	@media (min-width: 800px) {
+		padding-bottom: 40px;
+	}
+}
+
+section {
+	background-repeat: no-repeat;
+	background-position: center center;
+	h1 {
+		margin-bottom: 30px;
+	}
+	p {
+		font-size: 14px;
+		margin: 10px 0 0 0;
+		@media (min-width: 800px) {
+			font-size: 16px;
+		}
+	}
+	a {
+		font-weight: bold;
+		color: $default-text-color;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	&.homepage {
+		background-color: $homepage-fallback-background-color;
+		background: $homepage-fallback-background-color url($homepage-background-alt);
+		background-image: url($homepage-background), none;
+		background-position: center bottom;
+	}
+	&.portfolio {
+		background-color: $portfolio-fallback-background-color;
+		//height: 1200px !important;
+		@media (min-height: 500px) {
+			height: 1100px !important;
+		}
+		@media (min-height: 600px) {
+			height: 1200px !important;
+		}
+		@media (min-width: 600px) {
+			min-height: 800px !important;
+			height: 100% !important;
+		}
+		.inner {
+			height: 400px;
+			@media (min-height: 500px) {
+				height: 900px;
+			}
+			@media (min-height: 600px) {
+				height: 1100px;
+				@media (min-width: 700px) {
+					height: 500px;
+				}
+			}
+			@media (min-height: 800px) {
+				height: auto;
+			}
+		}
+	}
+	&.contact {
+		background-color: $contact-fallback-background-color;
+		background: $contact-fallback-background-color url($contact-background-alt);
+		background-image: url($contact-background), none;
+		background-position: center right;
+	}
+	.outer {
+		display: table;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+
+	.middle {
+		vertical-align: middle;
+		display: table-cell;
+	}
+	.inner {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		text-align: center;
+		padding: 0 20px 0 20px;
+	}
+	.verb {
+		color: $verb-text-color;
+	}
+	.work-wrapper {
+		text-align: center;
+		display: block;
+		margin: 50px 0 50px 0;
+		a {
+			text-decoration: none;
+			font-weight: normal;
+			&:hover {
+				opacity: 0.9;
+			}
+			@media (min-width: 600px) {
+				display: inline-block;
+				width: 28%;
+				vertical-align: top;
+				max-width: 260px;
+				margin: 0 15px 0 15px;
+			}
+		}
+		p {
+			@media (min-width: 600px) {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+	.work {
+		display: block;
+		width: 100%;
+		height: 100px;
+		margin: 40px 0 0 0;
+		@include works_box_shadow;
+		&:hover {
+			@include works_box_shadow_hover;
+		}
+		@media (min-width: 600px) {
+			display: inline-block;
+			width: 100%;
+			//height: 100%;
+			//height: 300px;
+			//max-height: 450px;
+			margin: 0px 0px 0 0px;
+		}
+		@media (min-height: 500px) {
+			height: 200px;
+		}
+		@media (min-height: 600px) {
+			height: 150px;
+		}
+		@media (min-height: 700px) {
+			height: 250px;
+		}
+		@media (min-height: 800px) {
+			height: 350px;
+		}
+		@media (min-height: 900px) {
+			height: 450px;
+		}
+		&.react {
+			background: url($portfolio-react-alt);
+			background-image: url($portfolio-react), none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+		&.smartdreamers {
+			background: url($portfolio-smartdreamers-alt);
+			background-image: url($portfolio-smartdreamers), none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+		&.smuff {
+			background: url($portfolio-smuff-alt);
+			background-image: url($portfolio-smuff), none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+}
+.github {
+	@include sprite_defaults;
+	width: 24px;
+	height: 24px;
+	vertical-align: top;
+	background-position: $github-icon;
+	display: inline-block;
+	margin: -2px 0 0 5px;
+}
+.contact-btn {
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	padding: 18px 100px 18px 100px;
+	background: $contact-button-background;
+	border-bottom: 3px solid $contact-button-presed;
+	border-radius: 250px;
+	margin: 15px 0 0 0;
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		opacity: 1;
+		background: $contact-button-presed;
+	}
 }

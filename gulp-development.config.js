@@ -11,6 +11,7 @@ var config = {
 	url: 'http://localhost',
 	paths: {
 		src: {
+			html: './*.html',
 			js: {
 				libs: './sources/scripts/lib/*.js',
 				scripts: './sources/scripts/*.js'
@@ -98,6 +99,7 @@ gulp.task('Preprocess SCSS', function() {
 
 // Watch for changes
 gulp.task('File watcher', function() {
+	gulp.watch(config.paths.src.html, ['Process JS libraries', 'Transpile JS', 'Lint JS', 'Process Media', 'Preprocess SCSS']);
 	gulp.watch(config.paths.src.js.libs, ['Process JS libraries']);
 	gulp.watch(config.paths.src.js.scripts, ['Transpile JS', 'Lint JS']);
 	gulp.watch(config.paths.src.media, ['Process Media']);

@@ -29,8 +29,74 @@
 	<link href="styles/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
+	<nav>
+		<div class="wrapper">
+			<a href="./" class="brand">
+				<span class="icon"></span>
+				<span class="name">Raul Glogovetan</span>
+			</a>
+			<ul class="menu" id="menu">
+				<li><a data-index=1>Home</a></li>
+				<li><a data-index=2>Portfolio</a></li>
+				<li><a data-index=3>Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div id="onepageScroll">
+		<section class="homepage">
+			<div class="outer">
+				<div class="middle">
+					<div class="inner">
+						<h1>I <span id="verb" class="verb">code, build, develop, design, create</span> web apps.</h1>
+						<p>For over 10 years I've been a front-end developer. I have built websites, stores, apps and interfaces.</p>
+						<p>Head on over to my <a id="link-portfolio">portfolio</a> to see my recent work.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="portfolio">
+			<div class="outer">
+				<div class="middle">
+					<div class="inner">
+						<h2>Portfolio</h2>
+						<p>A showcase of my latest works.</p>
+						<div class="work-wrapper">
+							<a id="work-react" href="http://glogovetan.com/works/portfolio">
+								<div class="work react"></div>
+								<p>React Rewrite</p>
+							</a>
+							<a id="work-smartdreamers" href="http://glogovetan.com/works/smartdreamers">
+								<div class="work smartdreamers"></div>
+								<p>Smartdreamers Recruiting App</p>
+							</a>
+							<a id="work-smuff" href="http://glogovetan.com/works/smuff-checkout-page">
+								<div class="work smuff"></div>
+								<p>Smuff Checkout Page</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="contact">
+			<div class="outer">
+				<div class="middle">
+					<div class="inner">
+						<h2>Let's get in touch!</h2>
+						<p>I'd like to help you build your next app.</p>
+						<p>You can also check out my public <a href="https://github.com/rdig">Github repository<span class="github"></span></a></p>
+						<a class="contact-btn" href="mailto:raul@glogovetan.com">Say hi!</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<footer>&copy; 2016 <a href="http://glogovetan.com" class="brand" target="_blank">Raul Glogovetan</a>. Website built for a <a href="http://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage" target="_blank">FreeCodeCamp</a> challenge.</footer>
+
 	<script src="scripts/lib/jquery-2.2.0.min.js"></script>
 	<script src="scripts/lib/jquery.onepage-scroll.min.js"></script>
+	<script src="scripts/lib/jquery.simple-text-rotator.min.js"></script>
 	<script src="scripts/portfolio.js"></script>
 </body>
 </html>
