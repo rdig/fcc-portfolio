@@ -7,6 +7,10 @@
     "dev": "gulp --gulpfile gulp-development.config.js",
     "build": "NODE_ENV=prod gulp --gulpfile gulp-production.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rdig/fcc-portfolio.git"
+  },
   "author": "Raul Glogovetan",
   "license": "MPL-2.0",
   "devDependencies": {
