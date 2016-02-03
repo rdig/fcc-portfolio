@@ -56,3 +56,15 @@ This is a one time build (unlike the `dev` build), and will exit once it's done 
 ## Known bugs
 
 Due to using the `onepage-scroll` plugin (which makes every parent element the same hight as the screen), on a subsection of mobile devices, there are some display / cropping issues.
+
+## License
+
+This project is licensed under the Mozilla Public License Version 2.0. You can [read it here](./license.md) or [learn more about it here](http://choosealicense.com/licenses/mpl-2.0/).
+
+### Additional licenses
+
+This project uses additional libraries, each with it's own license:
+
+- `jquery` - [Copyright jQuery Foundation and other contributors](https://github.com/jquery/jquery/blob/master/LICENSE.txt)
+- `onepage-scroll` by [Pete R](https://github.com/peachananr) - [Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/deed.en_US)
+- `simple-text-rotator` by [Pete R](https://github.com/peachananr) - License ???
